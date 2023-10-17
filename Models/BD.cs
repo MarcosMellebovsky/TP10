@@ -4,16 +4,6 @@ public static class BD
 {
     private static string connectionString = @"Server=localhost;DataBase=BDSeries;Trusted_Connection=True;";
 
-    public static Temporadas InfoTemporada(int idTemporada)
-    {
-        Temporadas InfoT = new Temporadas();
-        string SQL = "SELECT * FROM Temporadas WHERE IdTemporada = @idTem";
-        using (SqlConnection db = new SqlConnection(connectionString))
-        {
-            InfoT = db.QueryFirstOrDefault<Temporadas>(SQL, new{idTem = idTemporada});
-        }
-        return InfoT;
-    }
 
      public static Series InfoSeries(int idSerie)
     {
@@ -37,13 +27,13 @@ public static class BD
         return InfoA;
     }
 
-    public static List<Temporadas> ListarTemporadas()
+    public static List<Temporadas> ListarTemporadas(int idSerie)
     {
         List<Temporadas> ListaTemporadas = new List<Temporadas>();
-        string SQL = "SELECT * FROM Temporadas";
+        string SQL = "SELECT * FROM Temporadas Where IdSerie = @idSeriee";
         using (SqlConnection db = new SqlConnection(connectionString))
         {
-            ListaTemporadas = db.Query<Temporadas>(SQL).ToList();
+            ListaTemporadas = db.Query<Temporadas>(SQL, new{idSeriee = idSerie}).ToList();
         }
         return ListaTemporadas;
     }
@@ -59,13 +49,13 @@ public static class BD
         return ListaSeries;
     }
 
-    public static List<Actores> ListarActores()
+    public static List<Actores> ListarActores(int idSerie)
     {
         List<Actores> ListaActores = new List<Actores>();
-        string SQL = "SELECT * FROM Actores";
+        string SQL = "SELECT * FROM Actores Where IdSerie = @idSerieB";
         using (SqlConnection db = new SqlConnection(connectionString))
         {
-            ListaActores = db.Query<Actores>(SQL).ToList();
+            ListaActores = db.Query<Actores>(SQL, new{idSerieB = idSerie}).ToList();
         }
         return ListaActores;
     }

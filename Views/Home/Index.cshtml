@@ -1,4 +1,4 @@
-﻿
+﻿<div class="contenedero">
 @foreach(var itemS in ViewBag.ListaSeries)
 {
     <div class="card" style="width: 18rem;">
@@ -8,15 +8,18 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="MostrarSerie(@itemS.IdSerie)">
         Ver info serie
     </button>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="MostrarTemporadas(@itemS.IdSerie)">
+    <button type="button" class="btn btn-primary hola" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="MostrarTemporadas(@itemS.IdSerie)">
         Temporadas
     </button>
+    <div class="centerr">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="MostrarActores(@itemS.IdSerie)">
         Actores
     </button>
+    </div>
   </div>
 </div>
 }
+</div>
 
 
 

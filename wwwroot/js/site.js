@@ -9,12 +9,7 @@
             success:
             function(response)
         {
-            let element = "";
-            for (let index = 0; index < response.length; index++) {
-                
-                element = element + response[index];
-                $(element).html(response[index]);
-               }
+            
         }
         }
         
@@ -28,7 +23,7 @@ function MostrarActores(IdS)
         {
             type: 'POST',
             dataType: 'JSON',
-            url: '/Home/VerDetalleSeries',
+            url: '/Home/VerDetalleActores',
             data: {IdSerie : IdS},
             success:
             function(hola)
@@ -51,7 +46,7 @@ function MostrarTemporadas(IdS)
         {
             type: 'POST',
             dataType: 'JSON',
-            url: '/Home/VerDetalleSeries',
+            url: '/Home/VerDetalleTemporada',
             data: {IdSerie : IdS},
             success:
             function(hello)

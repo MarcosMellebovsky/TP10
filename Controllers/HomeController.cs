@@ -25,16 +25,16 @@ public class HomeController : Controller
         return MiSerie;
     }
 
-    public Temporadas VerDetalleTemporada(int idTemporada)
+    public List<Temporadas> VerDetalleTemporada(int idSerie)
     {  
-        Temporadas MiTemporada = BD.InfoTemporada(idTemporada);
-        return MiTemporada;
+        List<Temporadas> Temporadas = BD.ListarTemporadas(idSerie);
+        return Temporadas;
     }
 
-    public Actores VerDetalleActores(int idActor)
+   public List<Actores> VerDetalleActores(int idSerie)
     {  
-        Actores MiActor = BD.InfoActores(idActor);
-        return MiActor;
+        List<Actores> actores = BD.ListarActores(idSerie);
+        return actores;
     }
 
    
