@@ -1,4 +1,10 @@
-﻿<div class="contenedero">
+﻿<div class="cont-nomimgs">
+  <div class="div-img">
+<img src="/img/logo.png" alt="">
+</div>
+<p>Pelis.com</p>
+</div>
+<div class="contenedero">
 @foreach(var itemS in ViewBag.ListaSeries)
 {
     <div class="card" style="width: 18rem;">
@@ -27,11 +33,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="">Modal title</h1>
+        <h1 class="modal-title fs-5" id="Name">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div id=""></div>
+        <img class="img-fluid" id="ImagenSerie">
+        <div id="AñoInicio"></div>
+        <div id="Sinopsis"></div>
+        <div id="Temporadas"></div>
+        <div id="Actores"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -39,3 +49,4 @@
     </div>
   </div>
 </div>
+<script src="/js/site.js"></script>

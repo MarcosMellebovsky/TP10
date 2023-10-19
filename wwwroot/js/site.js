@@ -9,7 +9,12 @@
             success:
             function(response)
         {
-            
+            $("#Name").html(response.nombre);
+            $("#ImagenSerie").attr("src", response.imagenSerie);
+            $("#AñoInicio").html("Año de inicio: " + response.añoInicio);
+            $("#Sinopsis").html("Sinopsis: " +response.sinopsis);
+            TemporadaFunc();
+            ActoresFunc();
         }
         }
         
@@ -19,6 +24,7 @@
 
 function MostrarActores(IdS) 
 {
+    let Actor = "";
     $.ajax(
         {
             type: 'POST',
@@ -26,13 +32,15 @@ function MostrarActores(IdS)
             url: '/Home/VerDetalleActores',
             data: {IdSerie : IdS},
             success:
-            function(hola)
+            function(response)
         {
-           for (let index = 0; index < hola.length; index++) {
-            
-            
-           }
+            response.forEach(element => {
+            Actor += "Nombre del Actor/actriz: " + element.nombre + "<br>" + "<br>" 
+           });
 
+           $("#Actores").html(Actor);
+           InfoSerieFunc();
+           TemporadaFunc();
         }
         }
         
@@ -42,6 +50,7 @@ function MostrarActores(IdS)
 
 function MostrarTemporadas(IdS) 
 {
+    let Tempo = "";
     $.ajax(
         {
             type: 'POST',
@@ -49,19 +58,28 @@ function MostrarTemporadas(IdS)
             url: '/Home/VerDetalleTemporada',
             data: {IdSerie : IdS},
             success:
-            function(hello)
+            function(response)
         {
-            let element = "";
-            for (let index = 0; index < hello.length; index++) {
-                
-                element = element + hello[index];
-                $(element).html(hello[index]);
-               }
-               
+            hello.forEach(element => {
+            Tempo += "Numero de Temporada: " + element.numeroTemporada + "<br>";
+            Tempo += "Titulo de Temporada: " + element.tituloTemporada + "<br>" + "<br>";
+           });
 
+           $("#Temporadas").html(Tempo);
+           
         }
         }
         
     )
     
+}
+function InfoSerieFunc() {
+    $("AñoInicio").html("");
+    $("Sinopsis").html("");
+}
+function TemporadaFunc() {
+    $("Temporadas").html("");
+}
+function ActoresFunc() {
+    $("Actores").html("");
 }

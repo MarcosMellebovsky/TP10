@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xSG+kskYfWB3YGwDG+jb3VrMqwTPpzw914MX6wz662U=",
+  "Hash": "PATHRNXqRoi0jHfMn5fFgTNEg6OuiY3uvK3fzkYpWV4=",
   "Source": "TP10",
   "BasePath": "_content/TP10",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "Z:\\2023\\Programacion\\TP10\\wwwroot\\img\\logo.png",
+      "SourceId": "TP10",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\2023\\Programacion\\TP10\\wwwroot\\",
+      "BasePath": "_content/TP10",
+      "RelativePath": "img/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
     },
     {
       "Identity": "Z:\\2023\\Programacion\\TP10\\wwwroot\\js\\site.js",

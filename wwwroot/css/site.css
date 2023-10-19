@@ -8,6 +8,7 @@ html {
   }
 }
 
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -19,11 +20,12 @@ html {
 
 body {
   margin-bottom: 60px;
+  
 }
 .contenedero{
   display: flex;
   gap: 50px;
-  
+  margin-top: 2%;
 }
 .card-title{
   display: flex;
@@ -34,4 +36,29 @@ body {
   display: flex;
   justify-content: center;
   padding: .1rem;
+}
+.cont-nomimgs{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.cont-nomimgs img{
+  display: flex;
+
+  width: 10%;
+}
+.cont-nomimgs p {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+.div-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
