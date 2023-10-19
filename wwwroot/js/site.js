@@ -37,8 +37,10 @@ function MostrarActores(IdS)
             response.forEach(element => {
             Actor += "Nombre del Actor/actriz: " + element.nombre + "<br>" + "<br>" 
            });
+           
 
            $("#Actores").html(Actor);
+           
            InfoSerieFunc();
            TemporadaFunc();
         }
@@ -60,13 +62,15 @@ function MostrarTemporadas(IdS)
             success:
             function(response)
         {
-            hello.forEach(element => {
+            response.forEach(element => {
             Tempo += "Numero de Temporada: " + element.numeroTemporada + "<br>";
             Tempo += "Titulo de Temporada: " + element.tituloTemporada + "<br>" + "<br>";
            });
 
            $("#Temporadas").html(Tempo);
            
+           InfoSerieFunc();
+           ActoresFunc();
         }
         }
         
@@ -74,12 +78,12 @@ function MostrarTemporadas(IdS)
     
 }
 function InfoSerieFunc() {
-    $("AñoInicio").html("");
-    $("Sinopsis").html("");
+    $("#AñoInicio").html("");
+    $("#Sinopsis").html("");
 }
 function TemporadaFunc() {
-    $("Temporadas").html("");
+    $("#Temporadas").html("");
 }
 function ActoresFunc() {
-    $("Actores").html("");
+    $("#Actores").html("");
 }
